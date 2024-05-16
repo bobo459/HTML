@@ -1,0 +1,59 @@
+<!-- 애니메이션을 만들어 보자~! 20240513 - 마지막 교시-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>애니메이션</title>
+
+
+  <style>
+    #ball{
+      width: 100px; height: 100px;
+      background-color: blue;
+      border-radius: 50%;
+      position: relative;  /* absolute */
+      left: 50px;
+      top: 80px;
+      animation: play 1s linear infinite alternate; 
+      /* 2.@keyframes play 만들어준 것을 animation: play 1s linear 으로 애니메이션으로 실행 시킨다. 
+           뒤에 infinite alternate 을 붙여주므로 무한 반복 하겠다는 요구를 한다.*/
+    }
+
+    /* 1. 하단에 만들어준 동작을 #ball에 적용시켜 줘야한다. */
+    /* @keyframes play{
+      form{
+        top: 80px;
+      }
+      to{
+        top : 330px;
+      }
+    } */
+    @keyframes play{
+      0%{
+        top: 80px;
+      }
+      90%{
+        width: 100px; left: 50px;
+      }
+      100%{
+        left: 43px;
+        width: 115px;
+        height: 90px;
+        top : 330px;
+      }
+    }
+
+  </style>
+
+
+</head>
+<body>
+
+  <h1>애니메이션</h1>
+
+  <div id ="ball"></div>
+
+  
+</body>
+</html>

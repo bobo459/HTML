@@ -1,0 +1,71 @@
+<!-- signup.html  : 20240513-4교시 ,6교시-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+</head>
+<body>
+  
+  <div>
+    <h2>회원가입</h2>
+    input 태그 타입들~<br>
+    <input type="text"> 텍스트 또는 숫자, 기호작성 타입 <br>
+
+    <input type="number"> 숫자 입력 타입( type = number) <br>
+
+    <input type="password"> 비밀번호 입력 타입( type = password) <br>
+
+    <input type="email" required> 이메일 입력 타입( type = email) <br>
+    <!-- ↑ required는 필수 입력해야한다. 이메일을 적어도 required 없으면 넘어가지 않음 -->
+
+    <input type="date"> 날짜 선택 타입( type = date) <br>
+
+    <input type="month"> 월 선택 타입( type = month) <br>
+    <!--↑ 년도와 월만 선택 가능하다. -->
+
+    <input type="time"> 시간 선택 타입( type = time) <br>
+    <!--↑ 오전/오후 시간, 분 선택 가능 -->
+
+    <input type="week"> 주 선택 타입( type = week) <br>
+
+    <input type="datetime-local"> 시간 선택 타입( type = datetime-local) <br>
+
+    <input type="hidden"> 데이터를 화면 표시 없이 저장 관리 타입( type = hidden) <br>
+    <!--화면 표시 없이 감춰서 정보를 전달 한다. 원하는 형태로 만들수 있는 페이지도 있음 -->
+
+    <input type="file"> 파일선택 타입( type = file) <br>
+
+    체크박스 타입( type = checkbox) <br>
+    <!-- 다른 친구들은 변수로 넘어가지만 checkbox는 중복선택 가능한 배열로서 저장된다. -->
+    <input type="checkbox" name="interest" value="게임"> 게임
+    <input type="checkbox" name="interest" value="영화"> 영화
+    <input type="checkbox" name="interest" value="음악"> 글씨가 보일려면 직접 음악이라 써야 함<br>
+
+    라디오 타입( type = radio) <br>
+    <!-- 여러개 중 하나만 선택 가능하게 만들어 준다. 이름이 같아야만 하나만 선택 가능.-->
+    <input type="radio" name="gender" value="w">여자 
+    <input type="radio" name="gender" value="m">남자 <br>
+
+    <!-- 이름이 다르면 다른 라디오로 인식된다. 2개다 선택가능 -->
+    <input type="radio" name="gender2" value="w">여자 
+    <input type="radio" name="gender111" value="m">남자 <br>
+
+    <input type="range"> 범위, 슬라이드 형태( type = range) <br>
+    <input type="range" min="10" max="50" step="10" ><br>
+    <!-- min 최소값 max 최대값 step 이동범위 ex) 1씩이 아니라 10씩 이동이 된다. -->
+
+    <input type="button" value="등록"> 버튼 ( type = button) <br>
+    <input type="submit" value="가입">
+    <input type="reset" value="취소"><br>  <!-- form태그 안에 있는 값을 초기화 시켜준다. -->
+
+    <input type="tel">  ( type = tel) 전화번호 타입, 그 외에도 자바 작업이 좀 들어가야함 <br>  
+    <input type="search">  ( type = search) 적은 것을 X로 날릴수 도 있다. <br>
+    <input type="url">  ( type = url) <br>
+
+  </div>
+
+</body>
+</html>

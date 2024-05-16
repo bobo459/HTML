@@ -1,0 +1,104 @@
+<!-- login.html : 20240513-5교시 스타일을 줘서 꾸며주기를 해볼것이다.-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+
+  <style>
+    /* css 주석  : 자바에서 주석 처리하는 단축키와 같음*/
+    /* css는 html 태그의 모양을 꾸미거나, 효과를 주거나 할수 있다. 
+        html 태그의 스타일을 주기 위해서는 반드시 선택자가 필요하다. 
+        1. 선택자는 태그 이름으로 선택한다. ex)body
+        2. 태그에 이름을 부여한다. ex) 별명을 지어준다. 1) id="" class="" => id-유일해야한다. 고유한,유일한 이름이여야 한다. 중복안됨!
+                                                                       => class - 중복 가능! 그룹으로 묶어주기 위한 행위
+        */
+    /* 바디라는 이름을 가진 태그에 설정하겠다는 의미*/
+
+    /* body{
+      background-color: rgb(238, 159, 133);  // 끝낼때는 세미콜론;으로 끝내줘야한다.
+    }
+    // 주의!!! 우선순위가 정해져 있다. 클래스 보단 id 가 우선이라 id가 먼저 작동하고 클래스는 취소 될수 있다. [ id > 클래스 > 태그 ] 순이다.
+
+    #a{ background-color: yellow;    }
+    #b{ background-color: rgb(55, 204, 55);    }
+    
+    #label-id{  // 아이디 일때는 # (샵)찍고 아이디 이름 적기 
+      color: black;
+    }
+    .labelLogin{  // 클래스 일때는 . (점)찍고 클래스 이름 적기 
+      color: red;
+    }
+    label{
+      color: blue;
+    }
+    */
+
+    /* ↓ 위치를 브라우저 중앙에 오게 위치 이동
+     [여백을 주는 방법]
+    1. 마진 : 바깥쪽 여백 (옆사람과 나와의 간격, 거리) 태그와 태그 사이를 떨어 뜨려줌
+    2.패딩 : 안쪽 여백(패딩점퍼를 생각해보자. 안쪽 여백이 커져서 몸이 커짐)*/
+    #wrap{
+      /*margin: 10px 12px 15px 16px;   //위,아래, 오른쪽,왼쪽 =>시계방향?*/
+      /* margin: 10px 100px;   //10px : 위,아래, 100px : 오른쪽,왼쪽 */
+      width: 250px;
+       margin: 100px auto;   /*좌우의 여백이 확보가 안되서 좌우가 중앙에 이동으로 안됨 */
+       /* 패딩과 마진 사이에 있는게 테두리 이다.=> 굵기, 선의 모양, 선의 색 3가지를 설정할수 있다.*/
+        border: 3px solid gray;
+        padding: 15px;
+         border-radius: 10px; /* //10~5 정도가 모서리 라운드에 보기가 좋은 사이즈이다. */
+    }
+    .loginInput{
+       display: flex; /*//block이 아니니 flex 형태로 변형하겠다. */
+       justify-content: space-between;
+       /* row-gap: 10px;  //줄로 정렬할때 - 지금은 의미없는게 테이블로 하나의 표가 아니라 따로따로 여서 줘도 안들어감.*/
+       margin: 5px 0;
+    }
+    #loginBt{
+       width: 100%;  /*//100% 다른 녀석들과 동일하게 주겠다는 표시, 꽉채워서 주겠다. 절반 주겠다 싶음 50% 하면 됨 */
+       height: 40px; /*//높이는 가운데 정렬이 된다.*/
+       border: 0;
+       background-color:green ;
+       color: white;
+       border-radius: 2px;
+       text-align:center; /* 텍스트의 정렬 - 수평 정렬 (가로)*/
+       vertical-align : middle; /* 텍스트의 정렬 - 수직 정렬 (세로)*/
+    }
+    #signup{
+      color: blue;
+       text-decoration: none; /*//데코를 사용안함. 밑줄 등 */
+      /*display: none;    //화면에 보여지지 않게 함. 보이지 않음 */
+    }
+
+  </style>
+ </head>
+ <body>
+
+  <div id="wrap">
+
+    <form method="get" action="./signup.html">
+      <div class="loginInput">
+        <label id="label-id" class="labelLogin" for="memberId">아이디</label>   <!-- for: 자바를 사용하지 않아도 어느정도 input 의 제어가 가능하다. 대신 input의 id와 이름이 같아야한다. -->
+        <input type="text" name="id" id="memberId" placeholder="아이디를 입력하세요">  <!--input 사용자가 무언가를 입력하기 위해 사용되는 태그, 꼭 name="" 중복가능하지만 중복 안하는게 좋다 (변수 이름과 같다)
+                                                                                                       name있어야 값 전달을 할수 있다.
+                                  value="sky" 는 type="checkbox" 또는 라디오 일때만 사용하면된다. 나머진 직접입력 할거라
+                                  placeholder : 검색창에 글씨를 입력하기전 뭐를 할지 회색글씨로 적힌 기능. 입력시 지워진다.
+                                  text:글씨를 작성하게 해주는 타입 type="number" 을 하면 숫자만 입력 가능해진다. 
+                                  type="email" 이메일 형태만 가능하다 type="checkbox" 체크박스로 형태 변환-->
+      </div>
+      <div class="loginInput">
+        <label id="label-pw" class="labelLogin">비밀번호</label>
+        <input type="password" name="pw" placeholder="비밀번호를 입력하세요">  <!--type="password" : 비번처럼 감춰서 입력할때 사용한다. -->
+      </div>
+
+      <!-- 하나뿐인 태그여도 id를 줘야 자바에서 제어하기 쉽다. -->
+      <button id="loginBt">로그인</button>
+  
+    </form>
+    <a href="./signup.html" id="signup">회원가입</a> 
+  
+  </div>
+
+ </body>
+ </html>
